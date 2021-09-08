@@ -22,7 +22,7 @@ async def start(_, message: Message):
 @Client.on_message(filters.command(["vcstart", "st@RukaSuperbot"]) & ~filters.private & ~filters.channel)
 async def gstart(_, message: Message):
     await message.reply_text(
-        text="**Music Bot Is Online ✅**",
+        text="**Ruka Music Is Online ✅**",
         reply_markup=InlineKeyboardMarkup(
             [[
             InlineKeyboardButton(text="🎙️ Support Group 🎙️", url="https://t.me/RukaSupport")
@@ -34,7 +34,7 @@ async def gstart(_, message: Message):
 @Client.on_message(filters.command(["vchelp", "vchelp@RukaSuperbot"]) & filters.private & ~filters.channel)
 async def cmdlist(_, message: Message):
     await message.reply_text(
-        text="""**Rula Bot : Help Menu**
+        text="""**Ruka Bot : Help Menu**
 
 __× First Add Me To Your Group..
 × Promote Me As Admin In Your Group With All Permission..__
