@@ -183,11 +183,11 @@ def r_ply(type_):
                 
             ],
             [
-                InlineKeyboardButton('Playlist 📖', 'playlist'),
+                InlineKeyboardButton('Playlist', 'playlist'),
                 
             ],
             [       
-                InlineKeyboardButton("❌ Close",'cls')
+                InlineKeyboardButton("Close",'cls')
             ]        
         ]
     )
@@ -204,7 +204,7 @@ async def ee(client, message):
     if stats:
         await message.reply(stats)              
     else:
-        await message.reply('No VoiceChat instances running in this chat')
+        await message.reply('No VoiceChat instances running in this chat first Start Then play')
 
 @Client.on_message(
     filters.command("player")
@@ -274,7 +274,7 @@ async def m_cb(b, cb):
                 ) or (
                     callsmusic.pytgcalls.active_calls[chat_id] == 'paused'
                 ):
-            await cb.answer('Chat is not connected!', show_alert=True)
+            await cb.answer('Vc is not connected!', show_alert=True)
         else:
             callsmusic.pytgcalls.pause_stream(chat_id)
             
@@ -298,7 +298,7 @@ async def m_cb(b, cb):
     elif type_ == 'playlist':
         queue = que.get(cb.message.chat.id)
         if not queue:   
-            await cb.message.edit('Player is idle')
+            await cb.message.edit('Player is idle Not Playing Anything')
         temp = []
         for t in queue:
             temp.append(t)
@@ -356,11 +356,11 @@ async def m_cb(b, cb):
                 
                 ],
                 [
-                    InlineKeyboardButton('Playlist 📖', 'playlist'),
+                    InlineKeyboardButton('Playlist', 'playlist'),
                 
                 ],
                 [       
-                    InlineKeyboardButton("❌ Close",'cls')
+                    InlineKeyboardButton("Close",'cls')
                 ]        
             ]
         )
@@ -396,7 +396,7 @@ async def m_cb(b, cb):
             callsmusic.pytgcalls.leave_group_call(chat_id)
             await cb.message.edit('Successfully Left the Chat!')
         else:
-            await cb.answer('Chat is not connected!', show_alert=True)
+            await cb.answer('Vc is not connected!', show_alert=True)
 
 @Client.on_message(command("play") & other_filters)
 async def play(_, message: Message):
@@ -427,7 +427,7 @@ async def play(_, message: Message):
 
                           try:
                               await USER.join_chat(invitelink)
-                              await USER.send_message(message.chat.id,"I joined this group for playing music in VC")
+                              await USER.send_message(message.chat.id,"Yas! I'm here if any Query Join @RukaSupport")
                               await lel.edit(
                                   "<b>helper userbot joined your chat</b>",
                               )
@@ -438,7 +438,7 @@ async def play(_, message: Message):
                               #print(e)
                               await lel.edit(
                                   f"<b>🔴 Flood Wait Error 🔴 \nUser {user.first_name} couldn't join your group due to heavy requests for userbot! Make sure user is not banned in group."
-                                  "\n\nOr manually add @MusicXHelper to your Group and try again</b>",
+                                  "\n\nOr manually add @RukaMusic to your Group and try again</b>",
                               )
                               pass
     try:
@@ -486,13 +486,13 @@ async def play(_, message: Message):
             [   
                 [
                                
-                    InlineKeyboardButton('📖 Playlist', callback_data='playlist'),
-                    InlineKeyboardButton('Menu ⏯ ', callback_data='menu')
+                    InlineKeyboardButton('Playlist', callback_data='playlist'),
+                    InlineKeyboardButton('Menu', callback_data='menu')
                 
                 ],                     
                 [
-                    InlineKeyboardButton('YouTube 🎬', url=f'{url}'),
-                    InlineKeyboardButton('Close 🗑', callback_data='cls')
+                    InlineKeyboardButton('Support', url=f'@RukaSupport'),
+                    InlineKeyboardButton('Delete', callback_data='cls')
                 
                 ]                             
             ]
@@ -533,7 +533,7 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo="final.png",
         reply_markup=keyboard,
-        caption="▶️ **Playing** Here The Song Requested By {}".format(
+        caption="**Playing** Here The Song Requested By {}".format(
         message.from_user.mention()
         ),
     )
