@@ -491,7 +491,7 @@ async def play(_, message: Message):
                 
                 ],                     
                 [
-                    InlineKeyboardButton('Support', url=f't.me/RukaSupport'),
+                    InlineKeyboardButton('Support', url=f'http://t.me/RukaSupport'),
                     InlineKeyboardButton('Delete', callback_data='cls')
                 
                 ]                             
