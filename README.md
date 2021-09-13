@@ -77,14 +77,4 @@ License -> https://github.com/TG-Musics/TG-VCBOT/blob/main/LICENSE
 [![Run on Repl.it](https://repl.it/badge/github/SpEcHiDe/GenerateStringSession)](https://repl.it/@SpEcHiDe/GenerateStringSession)
 
 
-### Credits ❤
 
-- **[TG MUSICS](https://github.com/TG-Musics)** (Organization)
-- **Vivek** (Dev)
-- **Aswin Raj** (Helper)
-- **Jayant Hegde Kageri** (Dev)
-- **Fayas** (Helper)
-- **RabbitFoRed** (Dev)
-- **Itz-Fork** (Y)
-- **Uvindu Bro** (Helper)
-- **DaisyX**
