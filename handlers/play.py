@@ -204,7 +204,7 @@ async def ee(client, message):
     if stats:
         await message.reply(stats)              
     else:
-        await message.reply('No VoiceChat instances running in this chat first Start Then play')
+        await message.reply('__first Start VC Then play__')
 
 @Client.on_message(
     filters.command("player")
@@ -225,7 +225,7 @@ async def settings(client, message):
         else:
             await message.reply(stats, reply_markup=r_ply('play'))
     else:
-        await message.reply('No VC instances running in this chat')
+        await message.reply('__No VC running__')
 
 @Client.on_callback_query(filters.regex(pattern=r'^(playlist)$'))
 async def p_cb(b, cb):
@@ -291,14 +291,14 @@ async def m_cb(b, cb):
                 await cb.answer('Chat is not connected!', show_alert=True)
         else:
             callsmusic.pytgcalls.resume_stream(chat_id)
-            await cb.answer('Music Resumed!')
+            await cb.answer('__Music Resumed!__')
             await cb.message.edit(updated_stats(m_chat, qeue), reply_markup=r_ply('pause'))
                      
 
     elif type_ == 'playlist':
         queue = que.get(cb.message.chat.id)
         if not queue:   
-            await cb.message.edit('Player is idle Not Playing Anything')
+            await cb.message.edit('__Not Playing Anything__')
         temp = []
         for t in queue:
             temp.append(t)
@@ -338,7 +338,7 @@ async def m_cb(b, cb):
         else:
             callsmusic.pytgcalls.pause_stream(chat_id)
             
-            await cb.answer('Music Paused!')
+            await cb.answer('__Music Paused!__')
     elif type_ == 'cls':          
         await cb.answer('Closed menu')
         await cb.message.delete()       
@@ -394,7 +394,7 @@ async def m_cb(b, cb):
                 pass
 
             callsmusic.pytgcalls.leave_group_call(chat_id)
-            await cb.message.edit('Successfully Left the Chat!')
+            await cb.message.edit('__Successfully Left the Chat!__')
         else:
             await cb.answer('Vc is not connected!', show_alert=True)
 
