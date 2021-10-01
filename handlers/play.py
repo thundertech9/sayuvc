@@ -438,7 +438,7 @@ async def play(_, message: Message):
                               #print(e)
                               await lel.edit(
                                   f"<b>🔴 Flood Wait Error 🔴 \nUser {user.first_name} couldn't join your group due to heavy requests for userbot! Make sure user is not banned in group."
-                                  "\n\nOr manually add @RukaMusic to your Group and try again</b>",
+                                  "\n\nOr manually add @SayuMusic to your Group and try again</b>",
                               )
                               pass
     try:
@@ -451,7 +451,7 @@ async def play(_, message: Message):
         return     
     sender_id = message.from_user.id
     sender_name = message.from_user.first_name
-    await lel.edit("**__Searching Your Song__**")
+    await lel.edit("**__Searching Your Song on Yt__**")
     sender_id = message.from_user.id
     user_id = message.from_user.id
     sender_name = message.from_user.first_name
@@ -462,7 +462,7 @@ async def play(_, message: Message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    await lel.edit("**__Processing Your Song__**")
+    await lel.edit("**__Starting Your Song__**")
     ydl_opts = {"format": "bestaudio/best"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
